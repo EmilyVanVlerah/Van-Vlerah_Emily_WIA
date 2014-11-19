@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>About Emily's Pizza</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Fresh Bottom Slide Out Menu with jQuery" />
+        <meta name="keywords" content="jQuery, navigation, CSS3, menu" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <link href="css/lightbox.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        	<a href="index.html"><img src="image/logo.jpg"></a> 
+            <ul id="menu">
+                <li>
+                    <a>
+                        <i class="icon_about"></i>
+                        <span class="title">About</span>
+                        <span class="description">Learn about us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="icon_contact"></i>
+                        <span class="title">Contact Us</span>
+                        <span class="description">Reach out to us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content_about">
+        	<h2>About Emily's Pizza!</h2><br />
+            <p>We started out in Atlanta, GA in 2007 as a small pizzaria. Always making the freshes pizzas with local bought goods to support local business owners. After a few years we desides to open a second location in Athens, GA in 2009. Business was amazing between the town cites that we choose to expand to the amazing city of Savannah. We have and will continue to get out ingredience from local business owners and it will always be the freshes ingredience garenteed.</p><br /><br />
+            <p>We always use a brick over to bake and cook all of our pizzas, Calzones, and Panini.</p><br />
+            <a href="image/making.jpg" data-lightbox="group1" title="Staff Making a Pizza">
+       				<img src="image/making.jpg" alt="Image 1" width="150" height="150">
+               </a>
+                
+                 <a href="image/oven.jpg" data-lightbox="group1" title="Our Brick Oven at Work">
+                    <img src="image/oven.jpg" alt="Image 2" width="150" height="150">
+               </a>
+        
+        </div>
+        <div class="footer">
+        	<p>&#169; 2014 of Emily Van Vlerah</p><br />
+            <p>This site is for learning purposes only.</p>
+        </div>
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/lightbox-2.6.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-15px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'-10px'
+                        }, 400);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-95px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'50px'
+                        }, 400);
+                }
+            );
+        });
+		
+        </script>
+    </body>
+</html>

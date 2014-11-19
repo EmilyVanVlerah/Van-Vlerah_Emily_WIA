@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Contact Us</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Fresh Bottom Slide Out Menu with jQuery" />
+        <meta name="keywords" content="jQuery, navigation, CSS3, menu" />
+        <link rel="stylesheet" type="text/css" href="css/interactive_map.css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        
+    </head>
+    <body>
+        <div class="container">
+			<a href="index.html"><img src="image/logo.jpg"></a>
+            <ul id="menu">
+                <li id="selectable">
+                    <a href="about.html">
+                        <i class="icon_about"></i>
+                        <span class="title">About</span>
+                        <span class="description">Learn about us</span>
+                    </a>
+                </li>
+                <li id="selectable">
+                    <a>
+                        <i class="icon_contact"></i>
+                        <span class="title">Contact Us</span>
+                        <span class="description">Reach out to us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content_info">
+        	<h2>Reach Out to Emily's Pizza!</h2><br />
+            <p>Email: emspizza@email.com</p><br /><br />
+            <p>Facebook and Twitter: Emily's Pizza</p><br /><br />
+            
+			<h2>Find Emily's Pizza!</h2>
+                <div class="map_container">
+        
+                    <!-- Dots -->
+                    <a class="dot" style="top:90px;  left:124px;" continent="NA" city="athens"></a>
+                    <a class="dot" style="top:97px;  left:70px;"  continent="NA" city="atlanta"></a>
+                    <a class="dot" style="top:205px;  left:250px;" continent="NA" city="savannah"></a>
+                    
+        
+                            
+                    <!-- City details -->
+                    <div class="detail_container">
+                        <!-- City -->
+                        <div class="city_detail">
+                            <h2>Choose a city</h2>
+                            <p>Find a location's address</p>
+                        </div>
+                    </div>
+		
+
+		</div>
+        <div class="city_detail_container">
+			<!-- City -->
+			<div class="city_detail" id="athens">
+				<div class="city_info">
+					<h2>Athens, GA</h2>
+					<h3>Down Town</h3>
+					<p>Address: 1234 E Clayton Street<br />
+                    Phone: (706) 123-4567</p>
+				</div>
+			</div>
+			
+			<!-- City -->
+			<div class="city_detail" id="atlanta">
+				<div class="city_info">
+					<h2>Atlanta</h2>
+					<h3>Down Town</h3>
+					<p>Address: 5678 Forsyth Street SW<br />
+                    Phone: (123) 456-7890</p>
+				</div>
+			</div>
+			
+			<!-- City -->
+			<div class="city_detail" id="savannah">
+				<div class="city_info">
+					<h2>Savannah</h2>
+					<p>Address: 9012 E Congress Street<br />
+                    Phone: (111) 456-0090</p>
+				</div>
+			</div>
+            
+        </div>
+        <canvas id="Canvas1" width="700" height="200">
+                Your browser does not support canvas.
+            </canvas>
+        </div>
+        <div class="footer">
+        	<p>&#169; 2014 of Emily Van Vlerah</p><br />
+            <p>This site is for learning purposes only.</p>
+        </div>
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+		<script type="text/javascript" src="js/interactive_map.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-15px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'-10px'
+                        }, 400);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-95px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'50px'
+                        }, 400);
+                }
+            );
+        });
+		var theCanvas = document.getElementById("Canvas1");
+				
+		if(theCanvas){
+						
+			var ctx = theCanvas.getContext("2d");
+				if(ctx){	
+				
+					ctx.strokeStyle = "#96A56F";
+					ctx.fillStyle = "#B6C986";
+					ctx.lineWidth =5;
+															
+					ctx.strokeRect(10 , 100, 600, 90);	
+					ctx.fillRect(9, 100, 599, 87);
+				
+					var theString = "Coming Soon: A New Location!";			
+					
+					ctx.font="20pt Georgia";
+					ctx.fillStyle = "#567275";
+						
+					ctx.fillText(theString, 100, 160);
+				}
+		}
+        </script>
+    </body>
+</html>

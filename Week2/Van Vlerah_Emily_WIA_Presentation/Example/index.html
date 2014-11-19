@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Example - Slide Out Menu with jQuery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Fresh Bottom Slide Out Menu with jQuery" />
+        <meta name="keywords" content="jQuery, navigation, CSS3, menu" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    </head>
+    <body>
+        <div class="container">
+        	<img src="image/logo.png"> 
+            <ul id="menu">
+                <li>
+                    <a href="about.html">
+                        <i class="icon_about"></i>
+                        <span class="title">About</span>
+                        <span class="description">Learn about us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="icon_contact"></i>
+                        <span class="title">Contact Us</span>
+                        <span class="description">Reach out to us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+        	<h2>Welcome to Emily's Catering!</h2><br />
+            <p>Lorem ipsum dolor sit amet, stet ignota signiferumque id ius. An agam signiferumque est, has esse movet everti at. Facilisi vituperatoribus pro et, no pri erant adipisci adversarium, propriae omittantur qui ex. Doctus blandit voluptatibus duo ad, pro ad error timeam.
+
+Quodsi perfecto vis te, mei vero eius propriae an. Labitur menandri ex pri, id quo dico munere. An vis ridens laoreet tacimates. Ut usu quas assentior, cu possit convenire dissentiunt pri. Ius at minim deserunt, pro persius patrioque ut, mea brute malorum aliquando ne.</p>
+        </div>
+        <div class="footer">
+        	<p>&#169; 2014 of Emily Van Vlerah</p><br />
+            <p>This site is for learning purposes only.</p>
+        </div>
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-15px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'-10px'
+                        }, 400);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-95px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'50px'
+                        }, 400);
+                }
+            );
+        });
+        </script>
+    </body>
+</html>

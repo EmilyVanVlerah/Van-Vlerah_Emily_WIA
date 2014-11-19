@@ -2,12 +2,67 @@
 <html>
 <head>
     <title>HTML5 Drawing</title>
+    <style type="text/css">
+			#Canvas1, #Canvas2, #Canvas3, #Canvas4, #Canvas5, #Canvas6, 				#Canvas7 {
+				border: dotted 1px black;
+			}
+	</style>
+    <script src="js/modernizr.js"></script>
 </head>
 <body>
     <div id="container">
         <h1>HTML5 Canvas Drawing</h1>
     </div>
+    <div id="test">
+        	<canvas id="modernizr" width="400" height="50">Your browser does not support canvas.</canvas>
+    </div>
 
+    <h2>Part 1</h2>
+    <p>Drawing a Rectangle.</p>
+    <canvas id="Canvas1" width ="400" height="300">
+        	Your browser does not support canvas.
+    </canvas>
+    
+    <h2>Part 2</h2>
+    <p>Drawing a Circle.</p>
+    <canvas id="Canvas2" width ="400" height="300">
+        	Your browser does not support canvas.
+    </canvas>
+    
+    <h2>Part 3</h2>
+    <p>Drawing a Star.</p>
+	<canvas id="Canvas3" width ="700" height="300">
+        	Your browser does not support canvas.
+    </canvas>
+    
+    <h2>Part 4</h2>
+    <p>Drawing an Umbrella top.</p>
+    <canvas id="Canvas4" width="700" height="300">
+    	Your browser does not support canvas.
+    </canvas>
+    
+    
+    <h2>Part 5</h2>
+    <p>Drawing text.</p>
+    <canvas id="Canvas5" width="700" height="300">
+    	Your browser does not support canvas.
+    </canvas>
 
+    
+    <h2>Part 6</h2>
+    <p>Drawing images.</p>
+    <img id="img1" src="image/logo.png" style="display:none;">
+    <canvas id="Canvas6" width="3500" height="2600">
+    	Your browser does not support canvas.
+    </canvas>
+
+    
+    <h2>Part 7</h2>
+    <p>Drawing a scene.</p>
+    <canvas id="Canvas7" width="700" height="300">
+    	Your browser does not support canvas.
+    </canvas>
+
+	<script src="js/main.js"></script>
 </body>
 </html>

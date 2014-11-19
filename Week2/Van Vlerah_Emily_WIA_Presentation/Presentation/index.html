@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Presentation - Emily Van Vlerah</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="lib/css/styles/dark.css">
+
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h2>Slide Out Menu with jQuery</h2>
+                    <h3>Source by CoDrops</h3>
+  					<h4>Presentation by Emily Van Vlerah</h4>
+				</section>
+				
+                <section>
+                	<section>
+                    	<h2>About the Menu</h2>
+                        <p>This large menu will contain some title and a description of the menu item. It will slide out from the bottom revealing the description text and some icon.</p>
+                        <p style="font-size: 18px">(Press Down)</p>
+                    
+                    </section>
+                    <section>
+                    	<h2>What else is Included.</h2>
+                        <p>We will use some CSS3 properties for some nice shadow effects and jQuery for the interaction.</p>
+                        <p style="font-size: 18px">(Press up or down)</p>
+                    
+                    </section>
+                    <section>
+                    	<h2>Link to the source</h2>
+                        <a href="http://tympanus.net/codrops/2010/03/09/a-fresh-bottom-slide-out-menu-with-jquery/"><h3 style="color:orange">Click Here</h3></a>
+                        <p style="font-size: 18px">(Press up)</p>
+                    
+                    </section>
+                </section>    
+                <section>
+                		<h2>Code View - HTML</h2>
+                        <pre><code>
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Example - Slide Out Menu with jQuery&lt;/title&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Fresh Bottom Slide Out Menu with jQuery&quot; /&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;jQuery, navigation, CSS3, menu&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot;/&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;div class=&quot;container&quot;/&gt;
+    	&lt;img src=&quot;image/logo.png&quot;/&gt; 
+            &lt;ul id=&quot;menu&quot;/&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;about.html&quot;&gt;
+                        &lt;i class=&quot;icon_about&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;title&quot;&gt;About&lt;/span&gt;
+                        &lt;span class=&quot;description&quot;&gt;Learn about us&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;contact.html&quot;&gt;
+                        &lt;i class=&quot;icon_contact&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;title&quot;&gt;Contact Us&lt;/span&gt;
+                        &lt;span class=&quot;description&quot;&gt;Reach out to us&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+        	&lt;h2&gt;Welcome to Emily's Catering!&lt;/h2&gt;&lt;br /&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, stet ignota signiferumque id ius. An agam signiferumque est, has esse movet everti at. Facilisi vituperatoribus pro et, no pri erant adipisci adversarium, propriae omittantur qui ex. Doctus blandit voluptatibus duo ad, pro ad error timeam.
+
+Quodsi perfecto vis te, mei vero eius propriae an. Labitur menandri ex pri, id quo dico munere. An vis ridens laoreet tacimates. Ut usu quas assentior, cu possit convenire dissentiunt pri. Ius at minim deserunt, pro persius patrioque ut, mea brute malorum aliquando ne.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;footer&quot;&gt;
+        	&lt;p&gt;&#169; 2014 of Emily Van Vlerah&lt;/p&gt;&lt;br /&gt;
+            &lt;p&gt;This site is for learning purposes only.&lt;/p&gt;
+        &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                      
+                        
+                        </code>
+                        </pre>
+                        
+                </section>
+                <section>
+                		<h2>Code View - JavaScript</h2>
+                        <pre><code>
+    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    &#36;&#40;fuction&#40;&#41; {
+    	&#36;&#40;'#menu > li'&#41;.hover&#40;
+                function &#40;&#41; {
+                    var &#36;this = &#36;&#40;this&#41;;
+                    &#36;&#40;'a',$this&#41;.stop&#40;true,true&#41;.animate&#40;{
+                            'bottom':'-15px'
+                        }, 300&#41;;
+                    &#36;&#40;'i',&#36;this&#41;.stop&#40;true,true&#41;.animate&#40;{
+                            'top':'-10px'
+                        }, 400&#41;;
+                },
+                function &#40;&#41; {
+                    var &#36;this = &#36;&#40;this&#41;;
+                    &#36;&#40;'a',$this&#41;.stop&#40;true,true&#41;.animate&#40;{
+                            'bottom':'-95px'
+                        }, 300&#41;;
+                    &#36;&#40;'i',&#36;this&#41;.stop&#40;true,true&#41;.animate&#40;{
+                            'top':'50px'
+                        }, 400&#41;;
+                }
+            &#41;;
+        }&#41;;
+        &lt;/script&gt;
+    
+                        </code>
+                        </pre>
+                        
+                </section>
+                <section>
+                		<h2>Code View - CSS</h2>
+                        <pre><code>
+    *{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color:#000;
+    background:#FDF3BD url(../title.png) no-repeat center center;
+    height:600px;
+}
+.container{
+    width:900px;
+    height:130px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+    border:3px solid #13ABAC;
+    background-color:#6EC9CA;
+    -moz-box-shadow:1px 1px 6px #000;
+    -webkit-box-shadow:1px 1px 6px #000;
+    -moz-border-radius:0px 0px 20px 20px;
+    -webkit-border-bottom-left-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    border-radius:0px 0px 20px 20px;
+}
+img{
+	margin: 5px;
+	}
+
+ul#menu{
+    list-style:none;
+    position:absolute;
+    bottom:0px;
+    right:5px;
+    font-size:30px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color:#999;
+    letter-spacing:-2px;
+}
+ul#menu li{
+    float:left;
+    margin:0px 10px 0px 0px;
+}
+ul#menu a{
+    cursor:pointer;
+    position:relative;
+    float:left;
+    bottom:-95px;
+    line-height:20px;
+    width:210px;
+}
+.icon_about,
+.icon_contact,{
+    width:64px;
+    height:64px;
+    display:block;
+    left:140px;
+    top:50px;
+    position:absolute;
+}
+.icon_about{
+    background:transparent url(../images/id_card.png) no-repeat top left;
+}
+.icon_contact{
+    background:transparent url(../images/help.png) no-repeat top left;
+}
+ul#menu span.title{
+    display:block;
+    height:26px;
+    text-shadow:1px 1px 1px #000;
+    color:#B0609A;
+    text-indent:10px;
+}
+ul#menu span.description{
+    width:140px;
+	height:80px;
+    background-color:#FDA3E4;
+    border:3px solid #fff;
+    color:#fff;
+    display:block;
+    font-size:24px;
+    padding:10px;
+    -moz-box-shadow:1px 1px 6px #000;   
+    -webkit-box-shadow:1px 1px 6px #000;
+    box-shadow:1px 1px 6px #000;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+}
+ul#menu a:hover span.description{
+    background-color:#B0609A;
+	text-decoration: none;
+}
+ul#menu a:hover span.title{
+    color:#B0609A;
+	text-decoration: none;
+}
+
+.content{
+    width:900px;
+    height:200px;
+    margin:10px auto;
+	padding: 10px;
+	color: #B0609A;
+	text-shadow:1px 1px 1px #000;
+    position:relative;
+    border:3px solid #13ABAC;
+    background-color:#6EC9CA;
+    -moz-box-shadow:6px 6px 6px #000;
+    -webkit-box-shadow:6px 6px 6px #000;
+    -moz-border-radius:20px 20px 20px 20px;
+    -webkit-border-bottom-left-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    border-radius:20px 20px 20px 20px;
+}
+.footer{
+    width:900px;
+    height:50px;
+    margin:10px auto;
+	padding: 10px;
+	color: #fff;
+	text-align:center;
+	text-shadow:1px 1px 1px #000;
+    position:relative;
+    border:3px solid #13ABAC;
+    background-color:#6EC9CA;
+    -moz-box-shadow:6px 6px 6px #000;
+    -webkit-box-shadow:6px 6px 6px #000;
+    -moz-border-radius:20px 20px 20px 20px;
+    -webkit-border-bottom-left-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    border-radius:20px 20px 20px 20px;
+}
+
+    
+                        </code>
+                        </pre>
+                        
+                </section>	
+				<section>
+					<h2>Slide Out Menu with jQuery</h2>
+                    <h3>Click below to go to the example.</h3>
+  					<a href="../Example/index.html"><h4 style="color:orange">Click Here</h4></a>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

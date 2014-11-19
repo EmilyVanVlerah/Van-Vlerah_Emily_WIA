@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Emily's Pizza</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Fresh Bottom Slide Out Menu with jQuery" />
+        <meta name="keywords" content="jQuery, navigation, CSS3, menu" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    	<link href="css/lightbox.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        	<img src="image/logo.jpg"> 
+            <ul id="menu">
+                <li>
+                    <a href="about.html">
+                        <i class="icon_about"></i>
+                        <span class="title">About</span>
+                        <span class="description">Learn about us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="icon_contact"></i>
+                        <span class="title">Contact Us</span>
+                        <span class="description">Reach out to us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+        	<h2>Welcome to Emily's Pizza!</h2><br />
+            <p>Here at Emily's Pizza you have a variety of Pizzas and Salads along with drinks and desserts.</p><br /><br /><br />
+            <h3>Our Image Gallery</h3><br />
+            <h4>Our Food</h4>
+            	<a href="image/bread.jpg" data-lightbox="group1" title="Fresh Baked Panini">
+       				<img src="image/bread.jpg" alt="Image 1" width="150" height="150">
+               </a>
+                
+                 <a href="image/calzone.jpg" data-lightbox="group1" title="Our Stuffed Calzones">
+                    <img src="image/calzone.jpg" alt="Image 2" width="150" height="150">
+               </a>
+                
+               <a href="image/pizza1.jpg" data-lightbox="group1" title="Personal Pizzas">
+                    <img src="image/pizza1.jpg" alt="Image 3" width="150" height="150">
+               </a>
+               
+                <a href="image/pizza2.jpg" data-lightbox="group1" title="Person Pizzas">
+                    <img src="image/pizza2.jpg" alt="Image 4" width="150" height="150">
+               </a>
+               </a>
+               
+                <a href="image/salad.jpg" data-lightbox="group1" title="Your Choice on Salads">
+                    <img src="image/salad.jpg" alt="Image 5" width="150" height="150">
+               </a>
+            <h4>Our Drinks and Desserts</h4>
+            	<a href="image/wine.jpg" data-lightbox="group2" title="Your Choice of White or Red">
+       				<img src="image/wine.jpg" alt="Image 6" width="150" height="150">
+               </a>
+                
+                 <a href="image/beer.jpg" data-lightbox="group2" title="Numerous Brands on Tap and in Bottles">
+                    <img src="image/beer.jpg" alt="Image 7" width="150" height="150">
+               </a>
+                
+               <a href="image/softdr.jpg" data-lightbox="group2" title="Many Sodas to choose from">
+                    <img src="image/softdr.jpg" alt="Image 8" width="150" height="150">
+               </a>
+               
+                <a href="image/icecream.jpg" data-lightbox="group2" title="Your Choice of Homemade Ice Creams">
+                    <img src="image/icecream.jpg" alt="Image 9" width="150" height="150">
+               </a>
+               </a>
+               
+            <canvas id="Canvas1" width="700" height="200">
+                Your browser does not support canvas.
+            </canvas>
+               
+        </div>
+        <div class="footer">
+        	<p>&#169; 2014 of Emily Van Vlerah</p><br />
+            <p>This site is for learning purposes only.</p>
+        </div>
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/lightbox-2.6.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-15px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'-10px'
+                        }, 400);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop(true,true).animate({
+                            'bottom':'-95px'
+                        }, 300);
+                    $('i',$this).stop(true,true).animate({
+                            'top':'50px'
+                        }, 400);
+                }
+            );
+        });
+		var theCanvas = document.getElementById("Canvas1");
+				
+		if(theCanvas){
+						
+			var ctx = theCanvas.getContext("2d");
+				if(ctx){	
+				
+					ctx.strokeStyle = "#96A56F";
+					ctx.fillStyle = "#B6C986";
+					ctx.lineWidth =5;
+															
+					ctx.strokeRect(10 , 100, 600, 90);	
+					ctx.fillRect(9, 100, 599, 87);
+				
+					var theString = "Coming Soon To All Locations: Breakfast Pizza!";			
+					
+					ctx.font="20pt Georgia";
+					ctx.fillStyle = "#567275";
+						
+					ctx.fillText(theString, 20, 160);
+				}
+		}
+		
+        </script>
+    </body>
+</html>
